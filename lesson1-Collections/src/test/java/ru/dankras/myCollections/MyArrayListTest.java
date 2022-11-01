@@ -8,7 +8,7 @@ public class MyArrayListTest {
     private MyList<Integer> myList;
 
     @Test
-    @DisplayName("должен бросать верное исключение при получении элемента по некоррекному Индексу")
+    @DisplayName("должен бросать верное исключение при получении элемента по некорректному индексу")
     void indexOutTest() {
 
         for (int i = 0; i < 50; i++) {

@@ -19,7 +19,7 @@ public class MyArrayListTest {
 
     }
     @Test
-    @DisplayName("Должен давать верное количество элементов после заполнения")
+    @DisplayName("Должен  давать верное количество элементов после заполнения")
     void sizeListTest() {
         for (int i = 0; i < 50; i++) {
             myList.add(i,0);

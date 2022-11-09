@@ -3,7 +3,7 @@ package anonimousClasses;
 public class Food {
 
 
-    public void prepare(Cookable cookable, String str){
+    public void prepare(Cookable cookable, String str) {
         cookable.cook(str);
     }
 
@@ -11,9 +11,9 @@ public class Food {
         new Food().prepare(new Cookable() {
             @Override
             public void cook(String str) {
-                System.out.println(str+ " готов");
+                System.out.println(str + " готов");
             }
-        },"Салат");
+        }, "Салат");
 
     }
 }

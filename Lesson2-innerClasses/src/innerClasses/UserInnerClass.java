@@ -1,8 +1,8 @@
 package innerClasses;
 
 public class UserInnerClass {
-    private String login;
-    private String password;
+    private final String login;
+    private final String password;
 
     private class Query {
         void printToLog() {
@@ -21,9 +21,9 @@ public class UserInnerClass {
 
     public static void main(String[] args) {
         UserInnerClass user = new UserInnerClass("dankras", "pwdpwdpwd");
-        Query query= user.crateQuery();
+        Query query = user.crateQuery();
         query.printToLog();
-        query=user.new Query();
+        query = user.new Query();
         query.printToLog();
 
     }

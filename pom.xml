@@ -10,5 +10,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>lesson1-Collections</module>
+        <module>Lesson2-innerClasses</module>
     </modules>
 </project>

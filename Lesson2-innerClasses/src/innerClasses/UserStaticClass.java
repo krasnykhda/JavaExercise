@@ -1,3 +1,5 @@
+package innerClasses;
+
 public class UserStaticClass {
     private   String login;
     private String password;

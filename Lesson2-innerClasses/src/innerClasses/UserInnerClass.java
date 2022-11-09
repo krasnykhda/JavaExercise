@@ -1,3 +1,5 @@
+package innerClasses;
+
 public class UserInnerClass {
     private String login;
     private String password;

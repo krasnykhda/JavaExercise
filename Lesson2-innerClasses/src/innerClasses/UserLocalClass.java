@@ -1,3 +1,5 @@
+package innerClasses;
+
 public class UserLocalClass {
     private String login;
     private String password;

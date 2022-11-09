@@ -1,4 +1,4 @@
-package anonimousClasses;
+package anonymousClasses;
 
 public class Food {
 

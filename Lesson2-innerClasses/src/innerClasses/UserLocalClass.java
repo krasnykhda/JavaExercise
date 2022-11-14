@@ -21,7 +21,7 @@ public class UserLocalClass {
     }
 
     public static void main(String[] args) {
-        UserInnerClass user = new UserInnerClass("dankras", "pwdpwdpwd");
+        UserLocalClass user = new UserLocalClass("dankras", "pwdpwdpwd");
         user.crateQuery();
 
     }

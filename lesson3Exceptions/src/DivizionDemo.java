@@ -5,6 +5,5 @@ public class DivizionDemo {
         System.out.println(check.test(13));
     }
 
-    ;
 }
 

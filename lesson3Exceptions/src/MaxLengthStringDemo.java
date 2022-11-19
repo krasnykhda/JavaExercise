@@ -7,6 +7,6 @@ public class MaxLengthStringDemo {
                 return str1;
             }
         };
-        System.out.println(stringWithMaxLength.apply("asd","1234"));
+        System.out.println(stringWithMaxLength.apply("asd", "1234"));
     }
 }

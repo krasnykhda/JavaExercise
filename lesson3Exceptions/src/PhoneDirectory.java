@@ -3,10 +3,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TelephoneDirectory {
+public class PhoneDirectory {
     private final Map<String, List<String>> personsPhoneNumber;
 
-    public TelephoneDirectory() {
+    public PhoneDirectory() {
         personsPhoneNumber = new HashMap<>();
     }
 
@@ -22,10 +22,10 @@ public class TelephoneDirectory {
     }
 
     public static void main(String[] args) {
-        TelephoneDirectory telephoneDirectory = new TelephoneDirectory();
-        telephoneDirectory.addPersonNumber("Вася", "123123");
-        telephoneDirectory.addPersonNumber("Петя", "123123423");
-        telephoneDirectory.addPersonNumber("Петя", "123321");
-        System.out.println(telephoneDirectory.getPersonNumber("Петя"));
+        PhoneDirectory phoneDirectory = new PhoneDirectory();
+        phoneDirectory.addPersonNumber("Вася", "123123");
+        phoneDirectory.addPersonNumber("Петя", "123123423");
+        phoneDirectory.addPersonNumber("Петя", "123321");
+        System.out.println(phoneDirectory.getPersonNumber("Петя"));
     }
 }

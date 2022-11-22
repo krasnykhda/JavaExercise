@@ -11,7 +11,7 @@ public class PhoneDirectory {
     }
 
     public void addPersonNumber(String personName, String phoneNumber) {
-        if (personsPhoneNumber.get(personName) == null) {
+        if (!personsPhoneNumber.containsKey(personName)) {
             personsPhoneNumber.put(personName, new ArrayList<>());
         }
         personsPhoneNumber.get(personName).add(phoneNumber);

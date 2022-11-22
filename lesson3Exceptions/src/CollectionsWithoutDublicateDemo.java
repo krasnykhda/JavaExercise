@@ -2,8 +2,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class CollectionsWithoutDublicateDemo {
-    public static Collection<Integer> collectionsWithoutDublicate(Collection<Integer> list) {
-        return list.stream().collect(Collectors.toSet());
+    public static <T> Collection collectionsWithoutDublicate(Collection<T> list) {
+        return (Collection<T>) list.stream().collect(Collectors.toSet());
     }
 
     public static void main(String[] args) {

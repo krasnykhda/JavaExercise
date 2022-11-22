@@ -17,12 +17,12 @@ public class AddElementsTest {
     public static void main(String[] args) {
         List<Integer> arrayList = new ArrayList<Integer>();
         var t1 = System.currentTimeMillis();
-        addElement(arrayList, 20000000);
+        addElement(arrayList, 5000000);
         var t2 = System.currentTimeMillis();
         System.out.println("Время заполнения ArrayList " + (t2 - t1) + " миллисекунд");
         List<Integer> linkedList = new LinkedList<Integer>();
         t1 = System.currentTimeMillis();
-        addElement(linkedList, 20000000);
+        addElement(linkedList, 5000000);
         t2 = System.currentTimeMillis();
         System.out.println("Время заполнения LinkedList " + (t2 - t1) + " миллисекунд");
         System.out.println("Время заполнения LinkedList в конец списка существенно больше времени ArrayList" + "\n" +

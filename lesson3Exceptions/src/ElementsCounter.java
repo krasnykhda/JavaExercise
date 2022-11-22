@@ -21,7 +21,7 @@ public class ElementsCounter<K> {
 
     public static void main(String[] args) {
         int size = 1000;
-        var array = (Integer[]) Array.newInstance(Integer.class, size);
+        Integer[] array = new Integer[size];
         Random random = new Random();
         addElement(array, size, random);
         Map<Integer, Integer> map = arrayToMap(array);

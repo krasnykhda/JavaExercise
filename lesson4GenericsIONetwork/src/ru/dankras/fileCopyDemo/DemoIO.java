@@ -10,7 +10,7 @@ public class DemoIO {
         System.out.println("current dir: " + System.getProperty("user.dir"));
         var t1 = System.currentTimeMillis();
         try {
-            bufferedCopyFile("gradle.pdf", 1000);
+            bufferedCopyFile("gradle.pdf", 200);
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
@@ -19,7 +19,7 @@ public class DemoIO {
 
         t1 = System.currentTimeMillis();
         try {
-            copyFile("gradle.pdf");
+             copyFile("gradle.pdf");
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
@@ -37,7 +37,7 @@ public class DemoIO {
         thread.start();
         try (var bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
              var bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(textFile + "_copy.pdf"))) {
-            var buffer = new byte[2];
+            var buffer = new byte[size];
             while ((size = bufferedInputStream.read(buffer, 0, buffer.length)) > 0) {
                 readBites += size;
                 bufferedOutputStream.write(buffer, 0, size);
@@ -55,6 +55,7 @@ public class DemoIO {
                     Thread.sleep(1000);
                     System.out.println("Процент копирования - " + (readBites / sizeBites) * 100);
                 } catch (InterruptedException ex) {
+                    System.out.println("Процент копирования - " + (readBites / sizeBites) * 100);
                     Thread.currentThread().interrupt();
                 }
             }

@@ -9,14 +9,12 @@ public class Sequence {
     private int nextThreadId = 0;
     private final int maxNumberOfThreads;
     private char[] symbols;
-    private Thread[] threads;
     private int count = 1;
 
     private void start() {
         for (int id = 0; id < maxNumberOfThreads; id++) {
             int curentId = id;
-            threads[curentId] = new Thread(() -> action(curentId, 2));
-            threads[curentId].start();
+            new Thread(() -> action(curentId, 2)).start();
         }
 
     }
@@ -29,18 +27,22 @@ public class Sequence {
                 }
                 if (count > maxCount) {
                     logger.info("Before interrupt");
-                    Thread.currentThread().interrupt();
+                    throw new InterruptedException();
                 } else {
                     logger.info(String.valueOf(symbols[currentId]));
                 }
                 setNextThreadId();
                 notifyAll();
+                sleep();
                 logger.info("after notify");
 
 
             } catch (InterruptedException ex) {
                 logger.info("thread interrupt");
                 Thread.currentThread().interrupt();
+                setNextThreadId();
+                notifyAll();
+
             }
         }
     }
@@ -60,7 +62,6 @@ public class Sequence {
         char startSymbol = 'a';
         int ascii = (int) startSymbol;
         symbols = new char[maxNumberOfThreads];
-        threads = new Thread[maxNumberOfThreads];
         for (int i = 0; i < maxNumberOfThreads; i++) {
             symbols[i] = (char) ascii;
             ascii++;
@@ -69,7 +70,7 @@ public class Sequence {
     }
 
     public static void main(String[] args) {
-        Sequence sequence = new Sequence(5);
+        Sequence sequence = new Sequence(2);
         sequence.start();
     }
 

@@ -70,7 +70,7 @@ public class Sequence {
     }
 
     public static void main(String[] args) {
-        Sequence sequence = new Sequence(2);
+        Sequence sequence = new Sequence(3);
         sequence.start();
     }
 

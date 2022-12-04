@@ -27,7 +27,7 @@ public class Sequence {
                 }
                 if (count > maxCount) {
                     logger.info("Before interrupt");
-                    throw new InterruptedException();
+                    Thread.currentThread().interrupt();
                 } else {
                     logger.info(String.valueOf(symbols[currentId]));
                 }
@@ -39,7 +39,6 @@ public class Sequence {
 
             } catch (InterruptedException ex) {
                 logger.info("thread interrupt");
-                Thread.currentThread().interrupt();
                 setNextThreadId();
                 notifyAll();
 

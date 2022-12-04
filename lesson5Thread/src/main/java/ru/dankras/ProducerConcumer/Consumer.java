@@ -22,9 +22,9 @@ public class Consumer {
                     logger.info(String.valueOf(momitor.getValueAndFree()));
                     momitor.notifyAll();
                     if (momitor.getValue() == 20) {
-                        throw new InterruptedException();
+                        Thread.currentThread().interrupt();
                     }
-                    //Thread.sleep(1000);
+                    Thread.sleep(500);
                 } catch (InterruptedException exception) {
                     logger.info("thread interrupt");
                     Thread.currentThread().interrupt();

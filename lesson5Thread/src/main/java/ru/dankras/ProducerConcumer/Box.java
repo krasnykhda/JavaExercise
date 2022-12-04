@@ -2,7 +2,7 @@ package ru.dankras.ProducerConcumer;
 
 public class Box {
     private int value;
-    private boolean isFree;
+    private boolean isFree=true;
 
     public boolean isFree() {
         return isFree;

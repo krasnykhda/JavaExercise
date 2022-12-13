@@ -11,7 +11,7 @@ idea {
         languageLevel = 15
     }
     module {
-        downloadJavadoc = true
+        downloadJavadoc =  true
         downloadSources = true
     }
 }

@@ -47,29 +47,6 @@ public class DemoIO {
         thread.interrupt();
 
     }
-    private static void bufferedCopyFile2(String textFile, int size)  {
-        readBites = 0;
-        System.out.println("Копирование с помощью буфера");
-        var file = new File(textFile);
-        sizeBites = file.length();
-        Thread thread = getCopyStatusThread();
-        thread.start();
-        try (var inputStream =new FileInputStream(file);
-             var outputStream = new FileOutputStream(textFile + "_copy.pdf")){
-            var buffer = new byte[size];
-            while ((size = inputStream.read(buffer, 0, buffer.length)) > 0) {
-                readBites += size;
-                outputStream.write(buffer, 0, size);
-            }
-
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        thread.interrupt();
-
-    }
 
     private static Thread getCopyStatusThread() {
         Thread thread = new Thread(() -> {

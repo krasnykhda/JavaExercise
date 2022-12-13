@@ -1,4 +1,4 @@
-package ru.dankras.fruitDemo;
+package dankras.fruitDemo;
 
 public class Orange extends Fruit {
     public static final float weight = 1.5f;

@@ -1,4 +1,4 @@
-package ru.dankras.fruitDemo;
+package dankras.fruitDemo;
 
 import java.util.ArrayList;
 import java.util.List;

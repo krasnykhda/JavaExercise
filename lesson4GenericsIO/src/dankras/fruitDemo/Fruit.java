@@ -1,4 +1,4 @@
-package ru.dankras.fruitDemo;
+package dankras.fruitDemo;
 
 public abstract class Fruit {
 

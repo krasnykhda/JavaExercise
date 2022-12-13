@@ -1,4 +1,4 @@
-package ru.dankras.fruitDemo;
+package dankras.fruitDemo;
 
 public class FruitsManager {
     public static <T extends Fruit> void pourOver(Box<T> boxFrom, Box<T> boxTo) {

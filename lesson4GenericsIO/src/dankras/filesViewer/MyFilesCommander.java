@@ -1,4 +1,4 @@
-package ru.dankras.filesViewer;
+package dankras.filesViewer;
 
 import java.io.File;
 

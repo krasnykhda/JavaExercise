@@ -1,4 +1,4 @@
-package ru.dankras.fruitDemo;
+package dankras.fruitDemo;
 
 public class Apple extends Fruit {
     public static final float weight = 1.0f;

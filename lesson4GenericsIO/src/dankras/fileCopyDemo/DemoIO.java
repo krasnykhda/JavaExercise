@@ -1,4 +1,4 @@
-package ru.dankras.fileCopyDemo;
+package dankras.fileCopyDemo;
 
 import java.io.*;
 

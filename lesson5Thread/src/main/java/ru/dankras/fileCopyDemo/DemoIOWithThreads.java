@@ -12,7 +12,7 @@ public class DemoIOWithThreads {
         DemoIOWithThreads demoIO2 = new DemoIOWithThreads();
         Thread thread = new Thread(() -> {
             try {
-                demoIO2.copyFile("Лекция1-Градл.mp4");
+                demoIO2.copyFile("gradle.pdf");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -39,6 +39,9 @@ public class DemoIOWithThreads {
                 try {
                     Thread.sleep(1000);
                     System.out.println("Процент копирования - " + (readBites / sizeBites) * 100);
+                    if(readBites==sizeBites){
+                        Thread.currentThread().interrupt();
+                    }
                 } catch (InterruptedException ex) {
                     System.out.println("Процент копирования - " + (readBites / sizeBites) * 100);
                     Thread.currentThread().interrupt();

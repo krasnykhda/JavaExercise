@@ -1,0 +1,6 @@
+rootProject.name = 'JavaExercise'
+include 'lesson5Thread'
+include  'lesson5Server'
+
+
+

@@ -7,6 +7,7 @@ public class Cash {
     private final int id;
     private int numberProduct;
     private int currentStep;
+    private final BlockingQueue<Customer> blockingQueue;
 
     public int getCurrentStep() {
         return currentStep;
@@ -16,7 +17,6 @@ public class Cash {
         this.currentStep = currentStep;
     }
 
-    private final BlockingQueue<Customer> blockingQueue;
 
     public int getSpeed() {
         return speed;

@@ -9,6 +9,10 @@ public class Customer {
     private int id;
     private int purscheCount;
 
+
+    private boolean isJustComeIn;
+    private final CashSelector cashSelector;
+
     public void setId(int id) {
         this.id = id;
     }
@@ -16,9 +20,6 @@ public class Customer {
     public int getId() {
         return id;
     }
-
-    private boolean isJustComeIn;
-    private final CashSelector cashSelector;
 
     public int getPurscheCount() {
         return purscheCount;

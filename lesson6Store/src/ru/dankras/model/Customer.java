@@ -47,8 +47,4 @@ public class Customer {
         this.cashSelector = cashSelector;
     }
 
-    public String getInfo() {
-        return this.customerType + "_" + this.id + " " + this.purscheCount + ";";
-    }
-
 }

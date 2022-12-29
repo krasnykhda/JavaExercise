@@ -2,6 +2,7 @@ package ru.dankras.model;
 
 import ru.dankras.CustomerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -16,8 +17,8 @@ public class Store {
         return cashes;
     }
 
-    public Store(int numberOfCashes, int maxCashSpeed, int maxNumberCustomer, List<Cash> cashes, int stepTime) {
-        this.cashes = cashes;
+    public Store(int numberOfCashes, int maxCashSpeed, int maxNumberCustomer, int stepTime) {
+        this.cashes=new ArrayList<>();
         this.stepTime = stepTime;
         inizialize(numberOfCashes, maxCashSpeed, maxNumberCustomer);
     }
@@ -67,12 +68,12 @@ public class Store {
         }
         int numberCustomer = random.nextInt(maxNumberCustomer) + 1;
         for (int i = 0; i < numberCustomer; i++) {
-            addCustomer(random, true);
+            addCustomer(true);
         }
     }
 
-    public Customer addCustomer(Random random, boolean startInizialize) {
-        Customer customer = CustomerFactory.getCustomer(random);
+    public Customer addCustomer(boolean startInizialize) {
+        Customer customer = CustomerFactory.getCustomer();
         var cash = customer.getCash(cashes);
         cash.addCustomer(customer);
         if (!startInizialize) {
@@ -86,7 +87,7 @@ public class Store {
     public void getProductFromCash(Store store, Cash cash) {
         int speed = cash.getSpeed();
         try {
-            while (!Thread.currentThread().isInterrupted()) {
+            while (cash.getCurrentStep() <= store.getCurrentStep() || cash.getNumberProduct() != 0) {
                 int numberProduct = speed;
                 while (numberProduct > 0 && !cash.getBlockingQueue().isEmpty()) {
                     Customer customer = cash.getBlockingQueue().element();
@@ -102,9 +103,6 @@ public class Store {
                 }
                 cash.setCurrentStep(cash.getCurrentStep() + 1);
                 sleep(stepTime);
-                if (cash.getCurrentStep() >= store.getCurrentStep() && cash.getNumberProduct() == 0) {
-                    Thread.currentThread().interrupt();
-                }
             }
 
         } catch (InterruptedException exception) {

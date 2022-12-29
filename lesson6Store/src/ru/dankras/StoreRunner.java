@@ -29,7 +29,6 @@ public class StoreRunner {
             executorService.submit(() -> {
                 getProduct(store, cash);
             });
-            sleep(200);
         }
         executorService.shutdown();
     }
@@ -41,7 +40,7 @@ public class StoreRunner {
                 customer.setJustComeIn(false);
             }
             store.setCurrentStep(i);
-            customer = store.addCustomer(random, false);
+            customer = store.addCustomer(false);
             System.out.println(store);
             sleep(stepTime);
         }
@@ -52,7 +51,7 @@ public class StoreRunner {
     }
 
     public static void main(String[] args) {
-        Store store = new Store(4, 5, 10, new ArrayList<Cash>(), 2000);
+        Store store = new Store(4, 5, 10, 2000);
         StoreRunner storeRunner = new StoreRunner(20, 2000);
         storeRunner.start(store);
 

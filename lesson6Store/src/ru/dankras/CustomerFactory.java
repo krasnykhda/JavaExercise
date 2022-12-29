@@ -11,8 +11,9 @@ import java.util.Random;
 
 public class CustomerFactory {
     private static int actualId;
+    private static Random random = new Random();
 
-    public static Customer getCustomer(Random random) {
+    public static Customer getCustomer() {
         int pursheCount = random.nextInt(10) + 1;
         CustomerType customerType = CustomerType.values()[random.nextInt(CustomerType.values().length)];
         Customer customer = new Customer(pursheCount, customerType, getCashSelector(customerType));
